@@ -24,8 +24,8 @@
 ###Explanation
 - You are the manager at HappiTails animal shelter. You need to manage your
 shelter by storing and manipulating information about clients and animals.
-- Consider having the students make git commits as they finish each phase, so
-they can see the history
+- Make git commits as you finish each phase, so
+you can see the history
 
 ###Specification:
 #####Object Specs:
@@ -46,21 +46,22 @@ they can see the history
   - A client should be able to return a pet to the shelter
 
 - Shelter:
+  - The shelter should have a name
+  - The shelter should have an address
 	- The shelter should be able to return all the clients.
 	- The shelter should be able to return all the animals.
-  - The shelter should be able to create a new animal
-  - The shelter should be able to create a new client
-  - The shelter should be able to accept an existing pet from a client
+  - The shelter should be able to accept an animal (add to it's list)
+  - The shelter should be able to accept a client (add to it's list)
 
 - Relationships:
-	- A client should be able to adopt an animal.
-	- A client should be able to put an animal up for adoption
+	- The shelter should be able to give a pet to a client
+	- The shelter should be able to accept pets from clients
 
 #####Phase 1
-- Devine classes 
+- Define classes 
 
 #####Phase 2
-- New animals and clients can be added to the shelter
+- Animals and Clients can be added to the shelter
 
 #####Phase 3
 - Use pry to test out the functions you

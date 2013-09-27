@@ -2,4 +2,16 @@ require 'pry'
 require_relative 'data'
 
 # here is where you can write code to try out
-# the functions you've defined in your functions.rb
+# your classes
+
+
+
+molly = AutomaticAnimal.new('Molly')
+puddles = AutomaticAnimal.new('Puddles')
+
+puts molly
+puts puddles
+
+puts $shelter.display_clients
+
+puts $shelter.display_animals

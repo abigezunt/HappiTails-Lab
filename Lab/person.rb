@@ -6,22 +6,24 @@ class Person
   	@age = age
   	@gender = gender
   	@num_kids = num_kids
-  	@num_pets = @pets.length
   	@pets = {}
+  	@num_pets = @pets.length
+  end
+
+  def to_s
+  	"#{name}, #{@age} year old #{@gender}. Has #{@num_kids} children and #{@num_pets} pets."
   end
 
 end
 
 class Client < Person
   
-  def adopt_a_pet(name, animal_object)
+  def adopt(name, animal_object)
   	@pets << {name => animal_object}
   end
 
-  def return_a_pet(name)
+  def return(name)
   	@pets.delete(name)
   end
 
 end
-
-$shelter.clients['Sam'] = Person.new('Sam', 87, 'male', 3)

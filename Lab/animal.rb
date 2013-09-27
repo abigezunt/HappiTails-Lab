@@ -10,6 +10,10 @@ class Animal
   	@toys = []
   end
 
+  def to_s 
+  	"#{@name}, #{@age}-year-old #{@gender} #{@species}."
+  end
+
 end
 
 
@@ -18,17 +22,13 @@ class AutomaticAnimal < Animal
 
   attr_accessor :name, :age, :gender, :species, :toys
 
-  def initialize
-  	naminator
+  def initialize(name)
+  	@name = name
   	aginator
   	genderer
   	specieserator
-  	@toys = []
-  end
-
-  def naminator
-	arr = %w(Scrunchy Fido Sport Molly Lassie Snuggles Butch Wiggles Snoopy Munchkin Hopper Tiny Hooch Moochy Moops)
-	@name = arr[rand(arr.length)]
+	@toys = []  
+  	toymaker
   end
 
   def aginator
@@ -36,7 +36,7 @@ class AutomaticAnimal < Animal
   end
 
   def genderer
-  	arr = [male, female]
+  	arr = ['male', 'female']
   	@gender = arr[rand(1)]
   end
 
@@ -48,8 +48,10 @@ class AutomaticAnimal < Animal
   def toymaker
   	arr = %w(ball bone squeaky-toy feather squeaky-mouse ball stuffed-animal)
     rand(5).times do
-      @toys <<  arr[rand(arr.length)]
+      toy = arr[rand(arr.length)]
+      @toys << toy
     end
+    @toys
   end
 
 end

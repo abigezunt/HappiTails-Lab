@@ -1,12 +1,12 @@
 class Shelter
 
-	attr_accessor :name, :address
+	attr_accessor :name, :address, :clients, :animals, :animal_list, :client_list
 
 	def initialize(name, address)
 	  @name = name
 	  @address = address
-	  @clients = []
-	  @animals = []
+	  @clients = {}
+	  @animals = {}
 	end
 
 	def add_client(name)
@@ -18,19 +18,31 @@ class Shelter
 	end
 
 	def display_clients
-		@clients
+		@client_list = []
+		@clients.each do |key, value|
+		  @client_list << value.to_s
+		end
+		@client_list
 	end
 
 	def display_animals
-		@animals
+		@animal_list = []
+		@animals.each do |key, value|
+		  @animal_list << value.to_s
+		end
+		@animal_list
 	end
 
-	def new_animal
-		@animals << AutomaticAnimal.new
+	def new_animal(name, animal)
+		@animals = {name => animal}
 	end
 
-	def rescue_animal(animal)
-		@animals << animal
+	def rescue_animal(name, animal)
+		@animals = {name => animal}
+	end
+
+	def adopt_out(animal)
+		@animals.delete(animal)
 	end
 
 end
