@@ -15,3 +15,7 @@ puts puddles
 puts $shelter.display_clients
 
 puts $shelter.display_animals
+
+puts $shelter.animals
+
+puts $shelter.clients
